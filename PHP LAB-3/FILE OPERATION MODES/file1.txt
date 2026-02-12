@@ -1,0 +1,117 @@
+
+Task 1: File Upload and Download 
+System 
+�
+�
+Problem Statement 
+Add a file upload form to your website (or existing project). 
+After uploading: 
+● Store the file in a folder (uploads/) 
+● Show a Download button/link to download the same file. 
+�
+�
+Requirements 
+● Use HTML <form> with enctype="multipart/form-data" 
+● Use PHP $_FILES and move_uploaded_file() 
+● Use PHP headers to download the file 
+�
+�
+Expected Features 
+● Upload any file (PDF, image, text, etc.) 
+● Save it in uploads/ folder 
+● Show success message 
+● Provide Download button to download the uploaded file 
+�
+�
+Real-world Example 
+Like Google Drive / LMS assignment upload and download. 
+✅
+Task 2: Explore PHP File Functions 
+�
+�
+Problem Statement 
+List and demonstrate all major PHP file functions using examples. 
+�
+�
+Students should write programs using: 
+�
+�
+File Read/Write 
+● fopen() 
+● fclose() 
+● fread() 
+● fwrite() 
+● file_get_contents() 
+● file_put_contents() 
+● file() 
+�
+�
+File Information 
+● file_exists() 
+● filesize() 
+● filetype() 
+● fileatime() 
+● filemtime() 
+● filectime() 
+● fileperms() 
+● fileowner() 
+● filegroup() 
+● fileinode() 
+�
+�
+File & Folder Management 
+● copy() 
+● rename() 
+● unlink() 
+● mkdir() 
+● rmdir() 
+● is_file() 
+● is_dir() 
+�
+�
+Directory Handling (Parsing Directories) 
+● scandir() 
+● opendir() 
+● readdir() 
+● closedir() 
+● getcwd() 
+● chdir() 
+�
+�
+File Locking 
+● flock() 
+�
+�
+Expected Output 
+● Display file contents 
+● Display file size, type, times, permissions 
+● Show list of files in a directory 
+● Create, rename, copy, delete files and folders 
+● Show current working directory and change it 
+�
+�
+Real-world Example 
+Like file manager, log system, AI tool saving logs, Google Docs file info panel. 
+✅
+Task 3: File Operation Modes 
+�
+�
+Problem Statement 
+Demonstrate all file open modes using fopen() and explain their behavior. 
+�
+�
+Students must write programs for: 
+● r → Read only 
+● w → Write only (erase old data) 
+● a → Append only 
+● x → Create new file (fail if exists) 
+● r+ → Read & Write 
+● w+ → Read & Write (erase old data) 
+● a+ → Read & Append 
+● x+ → Create new file for Read & Write 
+Okay Now if you guys did it by learning then -  
+Here is a Simple project you have in your hands -  
+It is a File Manager application we see usually in 
+our phones / PCs 
+Build a Mini File Manager - Features: - Upload file - List uploaded files (using scandir() / 
+readdir()) - Show file size & last modified time - Download file - Delete file -  
