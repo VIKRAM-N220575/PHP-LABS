@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="icon" href="logo.PNG">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">☕ Cold Coffee Shop</a></div>
+    <nav>
+        <a href="index.html"><b>Home Page</b></a>
+        <a href="menu.html"><b>Menu</b></a>
+        <a href="contact.html"><b>About Us</b></a>
+        <a href="login.html"><b>Login/Sign Up</b></a>
+    </nav>
+</header>
+<main>
+        <h1>Refreshing Cold Coffees</h1>
+        <p>Chill your day with our premium cold brews ❄️</p>
+    </main>
+<center>
+<form action="refund.php" method="post" enctype="multipart/form-data">
+
+    <label id="name">Full Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label id="email">Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label id="location">Location:</label><br>
+    <input type="text" name="location" required><br><br>
+
+    <label id="reason">Reason for Refund:</label><br>
+    <textarea name="reason" rows="4" cols="30" required></textarea><br><br>
+
+    <label id="payment_proof">Upload Payment Proof:</label><br>
+    <input type="file" name="payment_proof" accept="image/*" required><br><br>
+
+    <label id="item_photo">Upload Delivered Item Photo:</label><br>
+    <input type="file" name="item_photo" accept="image/*" required><br><br>
+
+    <input type="submit" value="Submit Refund Request">
+
+</form>
+</center>
+<footer>
+    &copy; 2025 Cold Coffee Shop | All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
