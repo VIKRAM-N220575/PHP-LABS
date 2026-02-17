@@ -1,0 +1,102 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="icon" href="IMAGES\logo.PNG">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">☕ Cold Coffee Shop</a></div>
+    <nav>
+        <a href="index.html"><b>Home Page</b></a>
+        <a href="menu.html"><b>Menu</b></a>
+        <a href="contact.html"><b>About Us</b></a>
+        <a href="refund.html"><b>Refund Policy</b></a>
+    </nav>
+</header>
+<main>
+        <h1>Refreshing Cold Coffees</h1>
+        <p>Chill your day with our premium cold brews ❄️</p>
+    </main>
+<center>
+<form action="process_login.php" method="POST">
+    <fieldset>
+
+        <h2>Login</h2>
+
+        <label>Email</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Password</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <button type="submit">Login</button><br><br>
+
+        <p>Don't have an account?
+            <a href="register.html">Register Here</a>
+        </p>
+        <hr>
+        <a href="auth/google_login.php">
+            Login with Google
+        </a>
+        <hr>
+        <center><button id="firebaseBtn" onclick="firebaseLogin()">Login with Google (Firebase)</button></center>
+        <hr>
+        <a href="auth/github_login.php">
+        Login with GitHub
+        </a>
+
+
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCJGS624VuLpbC6jR7tDW8W4GRz4_mYCRA",
+            authDomain: "cold-coffee-shop-bc25c.firebaseapp.com",
+            projectId: "cold-coffee-shop-bc25c",
+            appId: "1:686958884724:web:d10095c3b9571693e35e21"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        window.firebaseLogin = function () {
+            const btn = document.getElementById("firebaseBtn");
+            btn.disabled = true;
+
+            signInWithPopup(auth, provider)
+            .then((result) => {
+                result.user.getIdToken().then((token) => {
+                fetch("firebase_callback.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ token: token })
+                }).then(() => {
+                    window.location.href = "index.html";
+                });
+                });
+            })
+            .catch((error) => {
+                btn.disabled = false; // re-enable if error
+                alert(error.message);
+            });
+        };
+        </script>
+    </fieldset>
+</form>
+
+</center>
+<footer>
+    &copy; 2025 Cold Coffee Shop | All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
